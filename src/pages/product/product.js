@@ -1,7 +1,7 @@
 import '/src/pages/product/product.css';
 /* 번들러 환경이기 때문에 index.js가 생략된다. */
 import { tiger, insertLast, comma, getPbImageURL } from '/src/lib';
-
+import gsap from 'gsap';
 /* vite이기 때문에 가능한 것 */
 // console.log(import.meta.env.VITE_PB_API);
 
@@ -39,6 +39,8 @@ async function renderProduct() {
     `;
     insertLast('.container ul', template);
   });
+
+  gsap.from('.product-item', { y: 30, opacity: 0, stagger: 0.1, delay: 0.3 });
 }
 
 renderProduct();

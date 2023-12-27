@@ -33,3 +33,17 @@
   max-height: 70vh;
   overflow: hidden;
 }
+
+.userName {
+  margin-top: 2rem;
+}
+.logout {
+  padding: 0.3rem 1rem;
+  border: 1px solid #000;
+  transition: all 0.2s;
+
+  &:hover {
+    background: #000;
+    color: #fff;
+  }
+}
