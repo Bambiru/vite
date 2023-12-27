@@ -1,0 +1,51 @@
+.container {
+  margin: 0 auto;
+}
+
+.container > ul {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  margin: 2.5rem;
+}
+
+.container > ul > li > a {
+  max-width: 30vw;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.brand {
+  font-weight: bold;
+}
+
+.desc {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 말줄임표 */
+}
+
+.price {
+  color: rgb(172, 172, 172);
+  text-decoration: line-through;
+}
+.discount {
+  font-size: 1.2rem;
+  color: red;
+}
+.real-price {
+  font-weight: bold;
+}
+
+@media (max-width: 400px) {
+  .container > ul {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+  .container > ul > li > a {
+    max-width: 80vw;
+  }
+}

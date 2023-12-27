@@ -1,136 +1,62 @@
-
-
-const END_POINT = 'https://jsonplaceholder.typicode.com/users'
-
-
+const END_POINT = 'https://jsonplaceholder.typicode.com/users';
 
 const defaultOptions = {
-  method:'GET',
-  body:null,
-  headers:{
-    'Content-Type':'application/json',
-    'Access-Control-Allow-Origin':'*'
-  }
-}
-
-
-
-
-export const tiger = async (options) =>{
-
-  const {url,...restOptions} = {
+  method: 'GET',
+  body: null,
+  headers: {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*',
+  },
+};
+export const tiger = async (options) => {
+  const { url, ...restOptions } = {
     ...defaultOptions,
     ...options,
-    headers:{
+    headers: {
       ...defaultOptions.headers,
-      ...options.headers
-    }
+      ...options.headers,
+    },
   };
 
-  const response = await fetch(url,restOptions);
+  const response = await fetch(url, restOptions);
 
-
-  if(response.ok){
+  if (response.ok) {
     response.data = await response.json();
   }
-  return response
-}
+  return response;
+};
 
-
-// const user = await tiger({ url:END_POINT, });
-// console.log( user.data );
-
-
-
-// tiger.get()
-// tiger.post()
-// tiger.put()
-// tiger.delete()
-
-
-
-tiger.get = (url,options)=>{
+tiger.get = (url, options) => {
   return tiger({
     url,
-    ...options
-  })
-}
+    ...options,
+  });
+};
 
-tiger.post = (url,body,options)=>{
+tiger.post = (url, body, options) => {
   return tiger({
-    method:'POST',
+    method: 'POST',
     url,
-    body:JSON.stringify(body),
-    ...options
-  })
-}
+    body: JSON.stringify(body),
+    ...options,
+  });
+};
 
-
-tiger.delete = (url,options)=>{
+tiger.delete = (url, options) => {
   return tiger({
-    method:'DELETE',
+    method: 'DELETE',
     url,
-    ...options
-  })
-}
+    ...options,
+  });
+};
 
-
-tiger.put = (url,body,options)=>{
+tiger.put = (url, body, options) => {
   return tiger({
-    method:'PUT',
+    method: 'PUT',
     url,
-    body:JSON.stringify(body),
-    ...options
-  })
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    body: JSON.stringify(body),
+    ...options,
+  });
+};
 
 // tiger.get('www.naver.com',{})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
