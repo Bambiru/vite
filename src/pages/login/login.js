@@ -1,10 +1,17 @@
 import '/src/pages/login/login.css';
-import { getNode, tiger, getStorage, setStorage } from '/src/lib';
+import {
+  getNode,
+  tiger,
+  getStorage,
+  setStorage,
+  setDocumentTitle,
+} from '/src/lib';
 import pb from '/src/api/pocketbase';
 import gsap from 'gsap';
 // import PocketBase from 'pocketbase';
-
 // const pb = new PocketBase(import.meta.env.VITE_PB_URL);
+
+setDocumentTitle('2.9CM / 로그인');
 
 const loginButton = getNode('.login');
 

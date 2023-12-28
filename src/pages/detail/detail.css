@@ -1,0 +1,41 @@
+
+.container {
+  padding: 2rem;
+  margin: 0 auto;
+
+  & input {
+    padding: 0.5rem;
+    border: 1px solid gray;
+    width: 100%;
+  }
+
+  & .visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 400px;
+}
+
+.real-price, .buttonGroup {
+  text-align: center;
+}
+
+button {
+  padding: 0.4rem 1rem;
+  border: 1px solid #000;
+  cursor: pointer;
+  margin-top: 2rem;
+}
+
+.modify {
+  background: #000;
+  color: #fff;
+}
